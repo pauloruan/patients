@@ -5,17 +5,15 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
-
-// Uma tabela para armazenar os usuários. Um usuário pode ser um psicólogo ou um paciente.
-// Um psicólogo pode ter vários pacientes e um paciente pode ter apenas um psicólogo.
-// Criar um enum para o tipo de usuário.
 
 enum UserStatus {
   ACTIVE

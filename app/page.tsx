@@ -1,10 +1,18 @@
+import { auth } from "@/auth"
+import { redirect } from "next/navigation"
 import { Content } from "./_components/content"
-import { Typography } from "./_components/typography"
+import { Login } from "./_components/login"
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth()
+
+  if (session) {
+    redirect("/dashboard")
+  }
+
   return (
     <Content>
-      <Typography.H1 className="font-sans">Patients ✨</Typography.H1>
+      <Login />
     </Content>
   )
 }
