@@ -22,8 +22,9 @@ enum UserStatus {
 
 enum SessionStatus {
   PENDING
-  ACCEPTED
-  REJECTED
+  CONFIRMED
+  COMPLETED
+  CANCELED
 }
 
 enum PaymentStatus {
@@ -78,7 +79,6 @@ model User {
   status        UserStatus    @default(ACTIVE)
   accounts      Account[]
   sessions      Session[]
-  patient       Patient?
   psychologist  Psychologist?
 
   @@map("users")
@@ -105,14 +105,15 @@ model Psychologist {
 
 model Patient {
   id             String       @id @default(cuid())
-  userId         String       @unique @map("user_id")
-  psychologistId String       @unique @map("psychologist_id")
-  dates          DateTime[]
-  therapies      Therapy[]
+  name           String
   age            Int
+  email          String       @unique
   notes          String?      @db.Text
   diagnosis      String       @db.Text
-  user           User         @relation(fields: [userId], references: [id])
+  status         UserStatus   @default(ACTIVE)
+  therapies      Therapy[]
+  createdAt      DateTime     @default(now()) @map("created_at")
+  psychologistId String       @map("psychologist_id")
   psychologist   Psychologist @relation(fields: [psychologistId], references: [id])
 
   @@map("patients")
@@ -124,7 +125,7 @@ model Therapy {
   psychologistId     String        @map("psychologist_id")
   date               DateTime
   duration           Int
-  basePrice          Decimal       @map("base_price") @db.Decimal(3, 2)
+  basePrice          Decimal       @map("base_price") @db.Decimal(5, 2)
   discountPercentage Int           @default(0) @map("discount_percentage")
   status             SessionStatus @default(PENDING)
   payment            PaymentStatus @default(PENDING)
