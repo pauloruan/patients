@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { cn } from "./lib/utils"
 import { Providers } from "./providers"
+import { Toaster } from "@/app/_components/ui/toaster"
 
 const inter = Inter({
   preload: true,
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: IRootLayoutProps) {
         )}
       >
         <Providers>{children}</Providers>
+        <Toaster />
       </body>
     </html>
   )
