@@ -2,8 +2,9 @@ import { db } from "@/src/lib/data"
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 
+
 export async function GET(request: NextRequest) {
-  const url = "http://localhost:3000"
+  const url = String(process.env.URL)
 
   const userId = request.cookies.get("userId")?.value
   if (!userId) {
