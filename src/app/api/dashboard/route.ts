@@ -4,7 +4,7 @@ import { NextResponse } from "next/server"
 
 
 export async function GET(request: NextRequest) {
-  const url = String(process.env.URL)
+  const url = "https://pr-patients.vercel.app"
 
   const userId = request.cookies.get("userId")?.value
   if (!userId) {

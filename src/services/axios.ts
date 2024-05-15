@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const client = axios.create({
-  baseURL: String(process.env.API_URL)
+  baseURL: "https://pr-patients.vercel.app/api"
 })
 
 interface API {
