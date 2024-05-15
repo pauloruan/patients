@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/app/_components/ui/button"
+import { Button } from "@/src/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -10,8 +10,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from "@/app/_components/ui/dialog"
-import { useToast } from "@/app/_components/ui/use-toast"
+} from "@/src/components/ui/dialog"
+import { useToast } from "@/src/components/ui/use-toast"
 import { API } from "@/src/services/axios"
 import { ArchiveIcon, CheckIcon, Cross2Icon } from "@radix-ui/react-icons"
 import { useMutation, useQueryClient } from "@tanstack/react-query"

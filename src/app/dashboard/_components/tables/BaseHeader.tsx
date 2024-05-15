@@ -1,4 +1,4 @@
-import { TableHeader, TableRow, TableHead } from "@/app/_components/ui/table"
+import { TableHead, TableHeader, TableRow } from "@/src/components/ui/table"
 
 export function BaseHeader() {
   return (

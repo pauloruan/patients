@@ -7,10 +7,10 @@ import {
   HomeIcon,
   PersonIcon
 } from "@radix-ui/react-icons"
-import { auth } from "@/auth"
 import Link from "next/link"
-import logout from "../_actions/logout"
-import login from "../_actions/login"
+import { auth } from "@/auth"
+import login from "../actions/login"
+import logout from "../actions/logout"
 import { Button } from "./ui/button"
 import {
   Sheet,

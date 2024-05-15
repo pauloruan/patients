@@ -1,5 +1,5 @@
-import { Button } from "@/app/_components/ui/button"
-import { CardFooter } from "@/app/_components/ui/card"
+import { Button } from "@/src/components/ui/button"
+import { CardFooter } from "@/src/components/ui/card"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 

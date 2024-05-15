@@ -1,5 +1,5 @@
-import { Badge } from "@/app/_components/ui/badge"
-import { TableBody, TableCell, TableRow } from "@/app/_components/ui/table"
+import { Badge } from "@/src/components/ui/badge"
+import { TableBody, TableCell, TableRow } from "@/src/components/ui/table"
 import { ArchivePatient } from "../actions/ArchivePatient"
 import { EditPatient } from "../actions/EditPatient"
 

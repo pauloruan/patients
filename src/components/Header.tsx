@@ -1,5 +1,5 @@
-import { Menu } from "./menu"
-import { ThemeToggle } from "./theme-toggle"
+import { Menu } from "./Menu"
+import { ThemeToggle } from "./ThemeToggle"
 import { Typography } from "./typography"
 
 export function Header() {

@@ -1,4 +1,4 @@
-import { Card } from "@/app/_components/ui/card"
+import { Card } from "@/src/components/ui/card"
 import { FilterAllPatients } from "../tables/FilterAllPatients"
 import { BaseFooter } from "./BaseFooter"
 import { BaseHeader } from "./BaseHeader"

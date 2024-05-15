@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/app/_components/ui/button"
+import { Button } from "@/src/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from "@/app/_components/ui/dialog"
+} from "@/src/components/ui/dialog"
 import {
   Form,
   FormControl,
@@ -18,17 +18,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage
-} from "@/app/_components/ui/form"
-import { Input } from "@/app/_components/ui/input"
+} from "@/src/components/ui/form"
+import { Input } from "@/src/components/ui/input"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue
-} from "@/app/_components/ui/select"
-import { Textarea } from "@/app/_components/ui/textarea"
-import { useToast } from "@/app/_components/ui/use-toast"
+} from "@/src/components/ui/select"
+import { Textarea } from "@/src/components/ui/textarea"
+import { useToast } from "@/src/components/ui/use-toast"
 import { API } from "@/src/services/axios"
 
 import { zodResolver } from "@hookform/resolvers/zod"

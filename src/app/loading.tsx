@@ -1,4 +1,4 @@
-import { Typography } from "./_components/typography"
+import { Typography } from "../components/typography"
 
 export default function Loading() {
   return (

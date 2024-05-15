@@ -1,9 +1,9 @@
-interface IRootLayoutProps {
+interface RootLayoutProps {
   children: React.ReactNode
 }
 
-interface ITemplateProps extends IRootLayoutProps {}
+interface TemplateProps extends RootLayoutProps {}
 
-interface IThemeProviderProps extends IRootLayoutProps {}
+interface ThemeProviderProps extends RootLayoutProps {}
 
-interface IProvidersProps extends IRootLayoutProps {}
+interface ProvidersProps extends RootLayoutProps {}

@@ -4,7 +4,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator
-} from "@/app/_components/ui/breadcrumb"
+} from "@/src/components/ui/breadcrumb"
 
 export async function DashboardHeader() {
   return (

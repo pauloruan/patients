@@ -1,4 +1,4 @@
-import { TableBody, TableCell, TableRow } from "@/app/_components/ui/table"
+import { TableBody, TableCell, TableRow } from "@/src/components/ui/table"
 
 interface Props {
   isLoading: boolean

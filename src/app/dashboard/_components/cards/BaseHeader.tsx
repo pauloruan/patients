@@ -1,8 +1,8 @@
 import {
+  CardDescription,
   CardHeader,
-  CardTitle,
-  CardDescription
-} from "@/app/_components/ui/card"
+  CardTitle
+} from "@/src/components/ui/card"
 
 export function BaseHeader() {
   return (

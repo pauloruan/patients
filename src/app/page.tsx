@@ -1,7 +1,7 @@
 import { auth } from "@/auth"
+import { Content } from "@/src/components/Content"
+import { Login } from "@/src/components/Login"
 import { redirect } from "next/navigation"
-import { Content } from "./_components/content"
-import { Login } from "./_components/login"
 
 export default async function Home() {
   const session = await auth()

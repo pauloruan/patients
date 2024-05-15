@@ -1,7 +1,7 @@
 "use client"
 
-import { CardContent } from "@/app/_components/ui/card"
-import { Table } from "@/app/_components/ui/table"
+import { CardContent } from "@/src/components/ui/card"
+import { Table } from "@/src/components/ui/table"
 import { API } from "@/src/services/axios"
 import { useQuery } from "@tanstack/react-query"
 import { BaseContent } from "./BaseContent"

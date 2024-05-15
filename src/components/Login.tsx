@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/app/_components/ui/button"
-import { Card, CardContent } from "@/app/_components/ui/card"
-import login from "../_actions/login"
+import { Button } from "@/src/components/ui/button"
+import { Card, CardContent } from "@/src/components/ui/card"
+import login from "../actions/login"
 import { Typography } from "./typography"
 
 export function Login() {

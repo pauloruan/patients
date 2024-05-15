@@ -1,7 +1,7 @@
 import { ArrowLeftIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
 import Link from "next/link"
-import { Typography } from "./_components/typography"
+import { Typography } from "../components/typography"
 
 export default function NotFound() {
   return (

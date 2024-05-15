@@ -3,10 +3,10 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger
-} from "@/app/_components/ui/tabs"
+} from "@/src/components/ui/tabs"
 import { CreatePatient } from "./actions/CreatePatient"
-import { CardAll } from "./cards/CardAll"
 import { CardActive } from "./cards/CardActive"
+import { CardAll } from "./cards/CardAll"
 import { CardArchived } from "./cards/CardArchived"
 
 export function DashboardCards() {

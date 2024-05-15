@@ -1,9 +1,9 @@
-import { Toaster } from "@/app/_components/ui/toaster"
-import "@/app/styles/globals.css"
+import { Toaster } from "@/src/components/ui/toaster"
+import { cn } from "@/src/lib/utils"
+import { Providers } from "@/src/providers"
+import "@/src/styles/globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { cn } from "../src/lib/utils"
-import { Providers } from "../src/providers"
 
 const inter = Inter({
   preload: true,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "App to manage patients"
 }
 
-export default function RootLayout({ children }: IRootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body
