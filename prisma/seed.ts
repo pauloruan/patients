@@ -1,4 +1,4 @@
-import { prisma } from "@/app/lib/prisma"
+import { prisma } from "@/src/lib/prisma"
 
 async function main() {
   const psychologist = await prisma.psychologist.findFirst({
@@ -32,14 +32,14 @@ async function main() {
       patientId: ozzy.id,
       psychologistId,
       duration: 50,
-      basePrice: 100.00,
+      basePrice: 100.0,
       discountPercentage: 0,
       local: "ONLINE",
       date: new Date(new Date().setDate(new Date().getDate() - 28)),
       createdAt: new Date(new Date().setDate(new Date().getDate() - 28)),
       payment: "PAID",
       status: "COMPLETED"
-    },
+    }
   })
 
   const therapy2 = await prisma.therapy.create({
@@ -47,7 +47,7 @@ async function main() {
       patientId: ozzy.id,
       psychologistId,
       duration: 50,
-      basePrice: 100.00,
+      basePrice: 100.0,
       discountPercentage: 0,
       local: "ONLINE",
       date: new Date(new Date().setDate(new Date().getDate() - 21)),
@@ -62,7 +62,7 @@ async function main() {
       patientId: ozzy.id,
       psychologistId,
       duration: 50,
-      basePrice: 100.00,
+      basePrice: 100.0,
       discountPercentage: 0,
       local: "ONLINE",
       date: new Date(new Date().setDate(new Date().getDate() - 14)),
@@ -77,7 +77,7 @@ async function main() {
       patientId: ozzy.id,
       psychologistId,
       duration: 50,
-      basePrice: 100.00,
+      basePrice: 100.0,
       discountPercentage: 0,
       local: "ONLINE",
       date: new Date(new Date().setDate(new Date().getDate() - 7)),
@@ -92,7 +92,7 @@ async function main() {
       patientId: snow.id,
       psychologistId,
       duration: 50,
-      basePrice: 100.00,
+      basePrice: 100.0,
       discountPercentage: 0,
       local: "PRESENCIAL",
       date: new Date(new Date().setDate(new Date().getDate() - 15)),
@@ -107,7 +107,7 @@ async function main() {
       patientId: snow.id,
       psychologistId,
       duration: 50,
-      basePrice: 100.00,
+      basePrice: 100.0,
       discountPercentage: 0,
       local: "PRESENCIAL",
       date: new Date(new Date().setDate(new Date().getDate() - 8)),
