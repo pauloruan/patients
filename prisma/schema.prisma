@@ -17,10 +17,11 @@ datasource db {
 
 enum UserStatus {
   ACTIVE
+  ARCHIVED
   INACTIVE
 }
 
-enum SessionStatus {
+enum TherapyStatus {
   PENDING
   CONFIRMED
   COMPLETED
@@ -34,7 +35,7 @@ enum PaymentStatus {
   CANCELED
 }
 
-enum LOCAL {
+enum Local {
   ONLINE
   PRESENCIAL
 }
@@ -127,9 +128,9 @@ model Therapy {
   duration           Int
   basePrice          Decimal       @map("base_price") @db.Decimal(5, 2)
   discountPercentage Int           @default(0) @map("discount_percentage")
-  status             SessionStatus @default(PENDING)
+  local              Local
+  status             TherapyStatus @default(PENDING)
   payment            PaymentStatus @default(PENDING)
-  local              LOCAL         @default(ONLINE)
   createdAt          DateTime      @default(now()) @map("created_at")
   patient            Patient       @relation(fields: [patientId], references: [id])
   psychologist       Psychologist  @relation(fields: [psychologistId], references: [id])

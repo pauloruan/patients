@@ -1,13 +1,13 @@
-import { db } from "@/app/lib/prisma"
+import { prisma } from "@/app/lib/prisma"
 
 async function main() {
-  const psychologist = await db.psychologist.findFirst({
+  const psychologist = await prisma.psychologist.findFirst({
     where: { user: { email: "ruanpr182@gmail.com" } }
   })
 
   const psychologistId = String(psychologist?.id)
 
-  const ozzy = await db.patient.create({
+  const ozzy = await prisma.patient.create({
     data: {
       name: "Ozzy",
       psychologistId,
@@ -17,7 +17,7 @@ async function main() {
     }
   })
 
-  const snow = await db.patient.create({
+  const snow = await prisma.patient.create({
     data: {
       name: "Snow",
       email: "snow@email.com",
@@ -27,7 +27,7 @@ async function main() {
     }
   })
 
-  const therapy1 = await db.therapy.create({
+  const therapy1 = await prisma.therapy.create({
     data: {
       patientId: ozzy.id,
       psychologistId,
@@ -42,7 +42,7 @@ async function main() {
     },
   })
 
-  const therapy2 = await db.therapy.create({
+  const therapy2 = await prisma.therapy.create({
     data: {
       patientId: ozzy.id,
       psychologistId,
@@ -57,7 +57,7 @@ async function main() {
     }
   })
 
-  const therapy3 = await db.therapy.create({
+  const therapy3 = await prisma.therapy.create({
     data: {
       patientId: ozzy.id,
       psychologistId,
@@ -72,7 +72,7 @@ async function main() {
     }
   })
 
-  const therapy4 = await db.therapy.create({
+  const therapy4 = await prisma.therapy.create({
     data: {
       patientId: ozzy.id,
       psychologistId,
@@ -87,7 +87,7 @@ async function main() {
     }
   })
 
-  const therapy5 = await db.therapy.create({
+  const therapy5 = await prisma.therapy.create({
     data: {
       patientId: snow.id,
       psychologistId,
@@ -102,7 +102,7 @@ async function main() {
     }
   })
 
-  const therapy6 = await db.therapy.create({
+  const therapy6 = await prisma.therapy.create({
     data: {
       patientId: snow.id,
       psychologistId,
@@ -125,9 +125,9 @@ async function main() {
 main()
   .catch(async (e) => {
     console.error(e)
-    await db.$disconnect()
+    await prisma.$disconnect()
     process.exit(1)
   })
   .finally(async () => {
-    await db.$disconnect()
+    await prisma.$disconnect()
   })
