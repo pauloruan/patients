@@ -3,7 +3,7 @@
 import { ThemeProvider as Provider } from "next-themes"
 import { useEffect, useState } from "react"
 
-function ThemeProvider({ children }: IThemeProviderProps): JSX.Element {
+function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])

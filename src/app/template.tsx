@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 
-export default function Template({ children }: ITemplateProps) {
+export default function Template({ children }: TemplateProps) {
   return (
     <motion.div
       initial={{ y: 16, opacity: 0 }}
