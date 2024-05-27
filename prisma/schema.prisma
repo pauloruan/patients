@@ -121,19 +121,17 @@ model Patient {
 }
 
 model Therapy {
-  id                 String        @id @default(cuid())
-  patientId          String        @map("patient_id")
-  psychologistId     String        @map("psychologist_id")
-  date               DateTime
-  duration           Int
-  basePrice          Decimal       @map("base_price") @db.Decimal(5, 2)
-  discountPercentage Int           @default(0) @map("discount_percentage")
-  local              Local
-  status             TherapyStatus @default(PENDING)
-  payment            PaymentStatus @default(PENDING)
-  createdAt          DateTime      @default(now()) @map("created_at")
-  patient            Patient       @relation(fields: [patientId], references: [id])
-  psychologist       Psychologist  @relation(fields: [psychologistId], references: [id])
+  id             String        @id @default(cuid())
+  patientId      String        @map("patient_id")
+  psychologistId String        @map("psychologist_id")
+  date           DateTime
+  price          Decimal       @map("base_price") @db.Decimal(5, 2)
+  local          Local
+  payment        PaymentStatus @default(PENDING)
+  status         TherapyStatus @default(PENDING)
+  createdAt      DateTime      @default(now()) @map("created_at")
+  patient        Patient       @relation(fields: [patientId], references: [id])
+  psychologist   Psychologist  @relation(fields: [psychologistId], references: [id])
 
   @@map("therapies")
 }
