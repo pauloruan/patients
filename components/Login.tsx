@@ -10,7 +10,7 @@ export function Login() {
     <Card className="mx-auto max-w-sm">
       <CardContent className="flex flex-col items-center justify-center gap-6 p-8">
         <span role="img" aria-label="brain" className="text-2xl">
-          🗣️
+          🧠
         </span>
         <form action={login} className="w-full text-left">
           <Button className="w-full font-sans">Entre com Google</Button>

@@ -8,7 +8,7 @@ export function Header() {
       <Menu />
       <Typography.P className="font-sans text-sm font-semibold">
         <span role="img" aria-label="brain">
-          🗣️
+          🧠
         </span>
         &nbsp;Patients
       </Typography.P>
