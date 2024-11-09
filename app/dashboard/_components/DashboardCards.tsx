@@ -3,11 +3,13 @@ import { CreatePatient } from "./actions/CreatePatient"
 import { CardActive } from "./cards/CardActive"
 import { CardAll } from "./cards/CardAll"
 import { CardArchived } from "./cards/CardArchived"
+import { Events } from "./cards/Events"
 
 export function DashboardCards() {
   return (
-    <div className="w-full flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-      <Tabs defaultValue="all" className="space-y-6">
+    <div className="w-full flex flex-col items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+      <Events />
+      <Tabs defaultValue="all" className="min-h-[424px] w-full space-y-6">
         <div className="flex items-center">
           <TabsList>
             <TabsTrigger className="font-sans" value="all">

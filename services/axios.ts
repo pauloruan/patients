@@ -7,7 +7,8 @@ const client = axios.create({
 interface API {
   getDashboardData: () => Promise<GetDashboardDataResponse>
   createPatient: (patient: PostPatientRequest) => Promise<string>
-  updatePatient: (patient: PutPatientRequest) => Promise<string>
+  updatePatient: (patient: PutPatientRequest) => Promise<string>,
+  createTherapy: (data: PostTherapyRequest) => Promise<string>
 }
 
 async function getDashboardData(): Promise<GetDashboardDataResponse> {
@@ -25,8 +26,14 @@ async function updatePatient(patient: PutPatientRequest): Promise<string> {
   return response.data
 }
 
+async function createTherapy(data: PostTherapyRequest): Promise<string> {
+  const response = await client.post("/therapies", data)
+  return response.data
+}
+
 export const API: API = {
   getDashboardData,
   createPatient,
-  updatePatient
+  updatePatient,
+  createTherapy,
 }

@@ -15,3 +15,11 @@ interface PutPatientRequest extends PostPatientRequest {
 interface PatientResponse {
   message: string
 }
+
+interface PostTherapyRequest {
+  patientId: string
+  date: Date
+  price: number
+  local: "ONLINE" | "PRESENCIAL"
+  payment: "PAID" | "PENDING" | "NOT_PAID" | "CANCELED"
+}

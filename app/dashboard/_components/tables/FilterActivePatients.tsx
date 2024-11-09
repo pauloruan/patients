@@ -13,7 +13,7 @@ export function FilterActivePatients() {
     queryKey: ["dashboard"],
     queryFn: API.getDashboardData
   })
-  const patients = data?.patients.active.slice()
+  const patients = data?.patients.active.data.slice()
   const hasPatients = patients && patients.length > 0
   const EmptyCondition = !hasPatients || isError || isLoading
   const displayCondition = hasPatients && !isError && !isLoading

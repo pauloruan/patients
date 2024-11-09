@@ -13,7 +13,7 @@ export function FilterArchivedPatients() {
     queryKey: ["dashboard"],
     queryFn: API.getDashboardData
   })
-  const patients = data?.patients.archived.slice()
+  const patients = data?.patients.archived.data.slice()
   const hasPatients = patients && patients.length > 0
   const EmptyCondition = !hasPatients || isError || isLoading
   const displayCondition = hasPatients && !isError && !isLoading

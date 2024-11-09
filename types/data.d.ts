@@ -4,6 +4,25 @@ enum UserStatus {
   INACTIVE = "INACTIVE",
 }
 
+enum TherapyStatus {
+  PENDING = "PENDING",
+  CONFIRMED = "CONFIRMED",
+  COMPLETED = "COMPLETED",
+  CANCELED = "CANCELED",
+}
+
+enum PaymentStatus {
+  PAID = "PAID",
+  PENDING = "PENDING",
+  NOT_PAID = "NOT_PAID",
+  CANCELED = "CANCELED",
+}
+
+enum Local {
+  ONLINE = "ONLINE",
+  PRESENCIAL = "PRESENCIAL"
+}
+
 interface User {
   id: string
   name: string
@@ -31,6 +50,11 @@ interface Patient {
   psychologistId: string
 }
 
+interface PatientContent {
+  count: number
+  data: Patient[]
+}
+
 interface Event {
   id: string
   patientId: string
@@ -46,9 +70,9 @@ interface Event {
 }
 
 interface Patients {
-  all: Patient[]
-  active: Patient[]
-  archived: Patient[]
+  all: PatientContent
+  active: PatientContent
+  archived: PatientContent
 }
 
 interface DashboardData {

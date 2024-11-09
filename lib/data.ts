@@ -55,6 +55,22 @@ async function updatePatient(data: PutPatientRequest, psychologistId: string) {
   })
 }
 
+async function createTherapy(data: PostTherapyRequest, psychologistId: string) {
+  return await prisma.therapy.create({
+    data: {
+      ...data,
+      psychologistId
+    }
+  })
+}
+
+async function findTherapiesByPsychologistId(psychologistId: string) {
+  return await prisma.therapy.findMany({
+    where: { psychologistId },
+    orderBy: { date: "asc" }
+  })
+}
+
 async function getDashboardData(userId: string) {
   const user = await prisma.user.findUnique({
     where: { id: userId }
@@ -66,31 +82,46 @@ async function getDashboardData(userId: string) {
 
   const allPatients = await prisma.patient.findMany({
     where: { psychologistId: psychologist?.id },
-    take: 3,
+    take: 5,
     orderBy: { createdAt: "desc" }
+  })
+
+  const countAllPatients = await prisma.patient.count({
+    where: { psychologistId: psychologist?.id }
   })
 
   const activePatients = await prisma.patient.findMany({
     where: { psychologistId: psychologist?.id, status: "ACTIVE" },
-    take: 3,
+    take: 5,
     orderBy: { createdAt: "desc" }
+  })
+
+  const countActivePatients = await prisma.patient.count({
+    where: { psychologistId: psychologist?.id, status: "ACTIVE" }
   })
 
   const archivedPatients = await prisma.patient.findMany({
     where: { psychologistId: psychologist?.id, status: "ARCHIVED" },
-    take: 3,
+    take: 5,
     orderBy: { createdAt: "desc" }
   })
 
+  const countArchivedPatients = await prisma.patient.count({
+    where: { psychologistId: psychologist?.id, status: "ARCHIVED" }
+  })
+
+  const all = { count: countAllPatients, data: allPatients }
+  const active = { count: countActivePatients, data: activePatients }
+  const archived = { count: countArchivedPatients, data: archivedPatients }
+
   const patients = {
-    all: allPatients,
-    active: activePatients,
-    archived: archivedPatients
+    all,
+    active,
+    archived
   }
 
   const events = await prisma.therapy.findMany({
     where: { psychologistId: psychologist?.id },
-    take: 3,
     orderBy: { createdAt: "desc" }
   })
 
@@ -111,5 +142,7 @@ export const db = {
   findPatientById,
   createPatient,
   updatePatient,
+  createTherapy,
+  findTherapiesByPsychologistId,
   getDashboardData
 }
